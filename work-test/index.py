@@ -1,8 +1,7 @@
 import json
-import logging
-import boto3
-import base64
 import yaml
+import base64
+import boto3
 from botocore.exceptions import ClientError
 
 bucket_name = 'pse'
@@ -40,6 +39,7 @@ def preparationData(event):
                                     # and only then will he become what it is. 
                                     # Otherwise, it is some kind of a pathetic string. 
                                     # And it won't show you its a symbol because it's the f*cking dictionary!!!
+
 def handler(event, context):
     data = preparationData(event)
     dataList = json.loads(getObject(bucket_name, key_path))
